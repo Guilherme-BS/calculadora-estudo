@@ -1,13 +1,16 @@
-let displayText = '';
-const operator = ["+", "-", "/", "*", "%"];
 let symbolOperator= '';
 let numberOne = 0
 let numberTwo = 0
 const anexar = (key) => {
   let resposta = document.getElementById("resultado");
+  let displayText = '';
+  const operator = ["+", "-", "/", "*", "%"];
   displayText = resposta.innerText;
   if (key === "C" ) {
-    displayText = "";
+    displayText = '';
+    numberOne = 0
+    numberTwo = 0
+    symbolOperator = ''
   } else if (key === "="){
     numberTwo = parseFloat(displayText);
     displayText = operation(numberOne,symbolOperator,numberTwo)
@@ -21,6 +24,7 @@ const anexar = (key) => {
   }
   resposta.innerText = displayText
 };
+
 const operation = (numberOne,symbolOperator,numberTwo) =>{
   switch (symbolOperator){
     case '+':
